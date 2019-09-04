@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
 #####
-# VosNoms (Matricule) .~= À MODIFIER =~.
+# JOUFFROY Emma
+# ADOLPHE Maxime - 79 156 789 @TODO verif le matricule et ajouter celui de Emm
 ###
 
 import numpy as np
