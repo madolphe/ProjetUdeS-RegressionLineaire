@@ -25,7 +25,11 @@ class Regression:
         NOTE : En mettant phi_x = x, on a une fonction de base lineaire qui fonctionne pour une regression lineaire
         """
         # AJOUTER CODE ICI
-        phi_x = x
+        phi_x = np.array([x**i for i in range(1, self.M+1)])
+        if isinstance(x, int):
+            phi_x = np.reshape(phi_x, (self.M, 1))
+        else:
+            phi_x = np.reshape(phi_x, (self.M, x.shape[0]))
         return phi_x
 
     def recherche_hyperparametre(self, X, t):
@@ -37,8 +41,10 @@ class Regression:
 
         X: vecteur de donnees
         t: vecteur de cibles
+
+        On propose pour le k-fold d'utiliser une fenêtre glissante comprenant 10% du jeu d'apprentissage :
+        Ainsi une donnee n'apparait qu'une seule fois dans le jeu de validation
         """
-        # AJOUTER CODE ICI
         self.M = 1
 
     def entrainement(self, X, t, using_sklearn=False):
@@ -94,3 +100,17 @@ class Regression:
         """
         # AJOUTER CODE ICI
         return 0.0
+
+
+if __name__ == '__main__':
+
+    def test_fonction_base_polynomiale():
+        reg = Regression(lamb=5, m=5)
+        # x_int = 2
+        x = np.array([1, 2, 3, 4, 5])
+        # Vérification de la fonction polynomiale appliquée:
+        print(reg.fonction_base_polynomiale(x))
+        # Vérification de la taille de la matrice résultat:
+        print(reg.fonction_base_polynomiale(x).shape == (reg.M, x.shape[0]))
+    test_fonction_base_polynomiale()
+
