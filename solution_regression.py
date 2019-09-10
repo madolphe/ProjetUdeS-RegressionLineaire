@@ -6,9 +6,7 @@
 ###
 import gestion_donnees as gd
 import numpy as np
-import random
 from sklearn import linear_model
-from math import *
 
 
 class Regression:
@@ -95,12 +93,16 @@ class Regression:
         """
         if self.M <= 0:
             self.recherche_hyperparametre(X, t, Mmin=1, Mmax=10)
-        if not using_sklearn:
-            phi_x = self.fonction_base_polynomiale(X)
-            self.w = np.linalg.solve((phi_x.T.dot(phi_x) + np.identity(phi_x.shape[1]) * self.lamb), (phi_x.T.dot(t)))
-        # else:
-            # Scikit learn
 
+        phi_x = self.fonction_base_polynomiale(X)
+        if not using_sklearn:
+            self.w = np.linalg.solve((phi_x.T.dot(phi_x) + np.identity(phi_x.shape[1]) * self.lamb), (phi_x.T.dot(t)))
+            print("w found", self.w)
+        else:
+            reg = linear_model.Ridge(alpha=self.lamb)
+            reg.fit(phi_x, t)
+            self.w = reg.coef_
+            print("w found", self.w)
 
     def prediction(self, x):
         """
@@ -112,7 +114,8 @@ class Regression:
         afin de calculer la prediction y(x,w) (equation 3.1 et 3.3).
         """
         # AJOUTER CODE ICI
-        return 0.5
+        prediction = x.dot(self.w)
+        return prediction
 
     @staticmethod
     def erreur(t, prediction):
@@ -150,4 +153,16 @@ if __name__ == '__main__':
         gestionnaire_donnees = gd.GestionDonnees(w, modele_gen, nb_train, nb_test, bruit)
         [x_train, t_train, x_test, t_test] = gestionnaire_donnees.generer_donnees()
         M = reg.recherche_hyperparametre(t_train, x_train, 2, 10)
-    test_fonction_recherche_hyperparametres()
+    #test_fonction_recherche_hyperparametres()
+
+    def test_entrainement():
+        reg = Regression(lamb=5, m=-12)
+        w = [0.3, 4.1]  # Parametres du modele generatif
+        modele_gen = "lineaire"
+        nb_train = 300
+        nb_test = 10
+        bruit = 0.2
+        gestionnaire_donnees = gd.GestionDonnees(w, modele_gen, nb_train, nb_test, bruit)
+        [x_train, t_train, x_test, t_test] = gestionnaire_donnees.generer_donnees()
+        reg.entrainement(x_train, t_train, using_sklearn=False)
+    test_entrainement()
