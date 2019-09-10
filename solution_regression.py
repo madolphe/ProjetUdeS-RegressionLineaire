@@ -29,7 +29,7 @@ class Regression:
         phi_x = np.array([x**i for i in range(1, self.M+1)]).T
         return phi_x
 
-    def recherche_hyperparametre(self, X, t, Mmin, Mmax):
+    def recherche_hyperparametre(self, X, t, Mmin=1, Mmax=10):
         """
         Validation croisee de type "k-fold" pour k utilisee pour trouver la meilleure valeur pour
         l'hyper-parametre self.M.
@@ -42,9 +42,6 @@ class Regression:
         Mmax : plus grande valeur de M à tester
 
         """
-
-        #@TODO Rajouter le fait qu'on travaille uniquement sur des scalaires pour le moment
-
         t = np.expand_dims(t, axis=1)
         liste_m = []
         liste_erreurs = []
@@ -69,7 +66,6 @@ class Regression:
         index_best_m = liste_erreurs.index(min(liste_erreurs))
         self.M = liste_m[index_best_m]
         print(self.M)
-        return self.M
 
     def entrainement(self, X, t, using_sklearn=False):
         """
@@ -97,12 +93,14 @@ class Regression:
         NOTE IMPORTANTE : lorsque self.M <= 0, il faut trouver la bonne valeur de self.M
 
         """
-        #AJOUTER CODE ICI
         if self.M <= 0:
-            self.recherche_hyperparametre(X, t)
+            self.recherche_hyperparametre(X, t, Mmin=1, Mmax=10)
+        if not using_sklearn:
+            phi_x = self.fonction_base_polynomiale(X)
+            self.w = np.linalg.solve((phi_x.T.dot(phi_x) + np.identity(phi_x.shape[1]) * self.lamb), (phi_x.T.dot(t)))
+        # else:
+            # Scikit learn
 
-        phi_x = self.fonction_base_polynomiale(X)
-        self.w = [0, 1]
 
     def prediction(self, x):
         """
@@ -152,61 +150,4 @@ if __name__ == '__main__':
         gestionnaire_donnees = gd.GestionDonnees(w, modele_gen, nb_train, nb_test, bruit)
         [x_train, t_train, x_test, t_test] = gestionnaire_donnees.generer_donnees()
         M = reg.recherche_hyperparametre(t_train, x_train, 2, 10)
-
     test_fonction_recherche_hyperparametres()
-
-
- # def recherche_hyperparametre(self, X, t, Mmin, Mmax):    En utilisant fenêtre glissante
- #        """
- #        Validation croisee de type "k-fold" pour k utilisee pour trouver la meilleure valeur pour
- #        l'hyper-parametre self.M.
- #
- #        Le resultat est mis dans la variable self.M
- #
- #        X: vecteur de donnees
- #        t: vecteur de cibles
- #        Mmin : plus petite valeur de M à tester
- #        Mmax : plus grande valeur de M à tester
- #
- #        On propose pour le k-fold d'utiliser une fenêtre glissante comprenant 10% du jeu d'apprentissage :
- #        Ainsi une donnee n'apparait qu'une seule fois dans le jeu de validation
- #        """
- #
- #        #@TODO Rajouter le fait qu'on travaille uniquement sur des scalaires pour le moment
- #        #self.M = 1
- #        if X.ndim == 1:
- #            pivot = int(np.round(X.shape[0]/10))
- #        elif X.ndim > 1:
- #            pivot = int(np.round(X.shape[1]/10))
- #        #else breakpoint()
- #        print("Taille X_val ( = pivot ) :", pivot)
- #        list_m_errors = []
- #
- #        for M in range(Mmin, Mmax+1):
- #            error_val_total = 0
- #            self.M = M
- #            phi_X = self.fonction_base_polynomiale(X)
- #            for j in range(0, 10):
- #                X_val = phi_X[:, j*pivot:pivot*(j+1)]
- #                X_train = np.concatenate((phi_X[:, :j*pivot], phi_X[:, pivot*(j+1):]), axis=1)
- #                t_val = t[j*pivot:pivot*(j+1)]
- #                t_train = np.concatenate((t[:j*pivot], t[pivot*(j+1):]))
- #                print("X_train.T.shape : ", X_train.T.shape)
- #                print("X_train.shape : ", X_train.shape)
- #                print("np.identity(X_train.shape[1]).shape : ", np.identity(X_train.shape[1]).shape)
- #                print("self.lamb.shape", self.lamb)
- #                print("t_train", t_train.shape)
- #                print("X_train.T.dot(t_train)", X_train.T.dot(t_train).shape)
- #
- #                # Wmap = np.linalg.solve((X_train.T.dot(X_train) + np.identity(X_train.shape[1]).dot(self.lamb)), (X_train.T.dot(t_train)))
- #                # print(Wmap.shape)
- #                # print(Wmap)
- #                #t_pred_val = X_val.T*Wmap
- #                #erreur_val = self.erreur(t_val, t_pred_val)
- #                #error_val_total = error_val_total + erreur_val
- #            #erreur_val_moy = error_val_total / 10
- #            #list_m_errors.append([M, erreur_val_moy])
- #        #index_best_m = np.where(list_m_errors == np.amin(list_m_errors))
- #       # index_best_m = np.argmin(np.array(list_m_errors[:, 1]))
- #        self.M = list_m_errors[0][0]
- #        return self.M
