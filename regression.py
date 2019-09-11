@@ -7,6 +7,7 @@ import gestion_donnees as gd
 import matplotlib.pyplot as plt
 
 
+
 def warning(erreur_test, erreur_apprentissage, bruit):
     """
     Fonction qui affiche un WARNING à l'ecran lorsque les erreurs obtenues en fonction du bruit
@@ -23,6 +24,7 @@ def warning(erreur_test, erreur_apprentissage, bruit):
     bruit: magnitude du bruit
     """
     # AJOUTER CODE ICI
+
     if( abs(erreur_apprentissage - erreur_test) > 1 ):
         print("Les différentes erreurs relevées par les algorithmes en fonction du bruit impliquent qu'il y a eu du sur ou sous apprentissage")
         
