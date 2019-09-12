@@ -72,7 +72,7 @@ class GestionDonnees:
             plt.plot(x[idx], t[idx], 'g')
 
         plt.plot(x_mod, t_mod, 'k')
-        plt.ylim(ymin=-1.5, ymax=4.5)
+        plt.ylim(ymin=-4.5, ymax=4.5)
 
 
 if __name__ == '__main__':

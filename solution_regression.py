@@ -57,14 +57,13 @@ class Regression:
                 Wmap = np.linalg.solve((X_train.T.dot(X_train) + np.identity(X_train.shape[1])*self.lamb),
                                        (X_train.T.dot(t_train)))
                 t_pred_val = X_val.dot(Wmap)
-                erreur_val = self.erreur(t_val, t_pred_val)
-                error_val_total = error_val_total + erreur_val
+                error_val_total += self.erreur(t_val, t_pred_val)
             erreur_val_moy = error_val_total / 10
             liste_m.append(M)
             liste_erreurs.append(erreur_val_moy)
         index_best_m = liste_erreurs.index(min(liste_erreurs))
         self.M = liste_m[index_best_m]
-        print(self.M)
+        print("Meilleure valeur de l'hyperparamètre M trouvé lors de la 10-fold cross-validation : %".format(self.M))
 
     def entrainement(self, X, t, using_sklearn=False):
         """

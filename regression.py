@@ -7,25 +7,24 @@ import gestion_donnees as gd
 import matplotlib.pyplot as plt
 
 
-
-def warning(erreur_test, erreur_apprentissage, bruit):
+def warning(erreur_test, erreur_entrainement, bruit, seuil_sous=2, seuil_sur=3):
     """
+    @TODO changer les valeurs des seuils
     Fonction qui affiche un WARNING à l'ecran lorsque les erreurs obtenues en fonction du bruit
     indique une possibilite de sur- ou de sous-apprentissage
 
     erreur_test: erreur obtenue sur l'ensemble de test
     erreur_apprentissage: erreur obtenue sur l'ensemble d'apprentissage
     bruit: magnitude du bruit
+    seuil_sous: Seuil
+    seuil_sur:
     """
-    x = [i for i in range(erreur_test.shape[0])]
-    plt.plot(x, erreur_test)
-    plt.plot(x, erreur_apprentissage)
-    plt.show()
-    print(erreur_test.mean())
-    print(erreur_apprentissage.mean())
-    if( abs(erreur_apprentissage - erreur_test) > 1 ):
-        print("Les différentes erreurs relevées par les algorithmes en fonction du bruit impliquent qu'il y a eu du sur ou sous apprentissage")
-        
+    if erreur_entrainement / bruit > seuil_sous and erreur_test / bruit > seuil_sous:
+        print("\033[1;31;40m WARNING : Les différentes erreurs relevées par les algorithmes en fonction du bruit "
+              "impliquent qu'il y a eu du sous apprentissage")
+    elif abs(erreur_test - erreur_entrainement) / bruit > seuil_sur:
+        print("\033[1;31;40m WARNING : Les différentes erreurs relevées par les algorithmes en fonction du bruit "
+              "impliquent qu'il y a eu du sur apprentissage")
 
 ################################
 # Execution en tant que script 
@@ -81,7 +80,7 @@ def main():
     print("Erreur de test :", "%.2f" % erreurs_test.mean())
     print("")
 
-    warning(erreurs_test, erreurs_entrainement, bruit)
+    warning(erreurs_test.mean(), erreurs_entrainement.mean(), bruit)
 
     # Affichage
     gestionnaire_donnees.afficher_donnees_et_modele(x_train, t_train, True)
