@@ -12,19 +12,17 @@ def warning(erreur_test, erreur_apprentissage, bruit):
     """
     Fonction qui affiche un WARNING à l'ecran lorsque les erreurs obtenues en fonction du bruit
     indique une possibilite de sur- ou de sous-apprentissage
-    
-    
 
-    Donc utiliser un print dans le cas où la moyenne de l'erreur entre le test
-    et l'apprentissage est compris entre une certaine borne. Attetion, le bruit doit être présent dans le calcul de sur / sous apprentissage
-    
-    
     erreur_test: erreur obtenue sur l'ensemble de test
     erreur_apprentissage: erreur obtenue sur l'ensemble d'apprentissage
     bruit: magnitude du bruit
     """
-    # AJOUTER CODE ICI
-
+    x = [i for i in range(erreur_test.shape[0])]
+    plt.plot(x, erreur_test)
+    plt.plot(x, erreur_apprentissage)
+    plt.show()
+    print(erreur_test.mean())
+    print(erreur_apprentissage.mean())
     if( abs(erreur_apprentissage - erreur_test) > 1 ):
         print("Les différentes erreurs relevées par les algorithmes en fonction du bruit impliquent qu'il y a eu du sur ou sous apprentissage")
         
@@ -83,7 +81,7 @@ def main():
     print("Erreur de test :", "%.2f" % erreurs_test.mean())
     print("")
 
-    warning(erreurs_test.mean(), erreurs_entrainement.mean(), bruit)
+    warning(erreurs_test, erreurs_entrainement, bruit)
 
     # Affichage
     gestionnaire_donnees.afficher_donnees_et_modele(x_train, t_train, True)

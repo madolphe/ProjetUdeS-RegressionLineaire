@@ -7,6 +7,7 @@
 import gestion_donnees as gd
 import numpy as np
 from sklearn import linear_model
+import matplotlib.pyplot as plt
 
 
 class Regression:
@@ -43,7 +44,7 @@ class Regression:
         t = np.expand_dims(t, axis=1)
         liste_m = []
         liste_erreurs = []
-        taille_validation = int(np.round(X.shape[0]/10))
+        taille_validation = int(np.round(X.shape[0]/5))
         for M in range(Mmin, Mmax+1):
             error_val_total = 0
             self.M = M
@@ -103,6 +104,7 @@ class Regression:
             reg.fit(phi_x, t)
             self.w = reg.coef_
             print("w found", self.w)
+        return phi_x
 
     def prediction(self, x):
         """
@@ -114,7 +116,8 @@ class Regression:
         afin de calculer la prediction y(x,w) (equation 3.1 et 3.3).
         """
         # AJOUTER CODE ICI
-        prediction = x.dot(self.w)
+        phi_x = self.fonction_base_polynomiale(x)
+        prediction = phi_x.dot(self.w)
         return prediction
 
     @staticmethod
@@ -156,13 +159,27 @@ if __name__ == '__main__':
     #test_fonction_recherche_hyperparametres()
 
     def test_entrainement():
-        reg = Regression(lamb=5, m=-12)
-        w = [0.3, 4.1]  # Parametres du modele generatif
-        modele_gen = "lineaire"
+        reg = Regression(lamb=0, m=1500)
+        w = [0.3, 4.1]
+        modele_gen = "tanh"
         nb_train = 300
-        nb_test = 10
+        nb_test = 100
         bruit = 0.2
         gestionnaire_donnees = gd.GestionDonnees(w, modele_gen, nb_train, nb_test, bruit)
         [x_train, t_train, x_test, t_test] = gestionnaire_donnees.generer_donnees()
-        reg.entrainement(x_train, t_train, using_sklearn=False)
+        phi_x = reg.entrainement(x_train, t_train, using_sklearn=False)
+        t_pred_train = phi_x.dot(reg.w)
+        print(t_pred_train.shape)
+        phi_x_test = reg.fonction_base_polynomiale(x_test)
+        t_pred_test = phi_x_test.dot(reg.w)
+        plt.subplot(211)
+        plt.title('Donnees d\'entrainement')
+        plt.scatter(x_train, t_train)
+        plt.scatter(x_train, t_pred_train)
+        plt.subplot(212)
+        plt.title('Donnees de test')
+        plt.scatter(x_test, t_test)
+        plt.scatter(x_test, t_pred_test)
+        plt.show()
     test_entrainement()
+
