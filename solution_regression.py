@@ -26,7 +26,8 @@ class Regression:
         NOTE : En mettant phi_x = x, on a une fonction de base lineaire qui fonctionne pour une regression lineaire
         """
         if not using_sklearn:
-            # Après avoir testé les résultats renvoyés par scikit learn, la fonction de base polynomiale renvoie un tableau 2D de float64. C'est pour cel que nous avons décidé de caster nos données
+            # Après avoir testé les résultats renvoyés par scikit learn, la fonction de base polynomiale renvoie
+            # un tableau 2D de float64. C'est pour cel que nous avons décidé de caster nos données
             phi_x = np.array([x**i for i in range(0, self.M)]).T.astype(float)
         else:
             poly = PolynomialFeatures(degree=self.M - 1)
