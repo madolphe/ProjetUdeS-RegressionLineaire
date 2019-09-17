@@ -67,8 +67,8 @@ def main():
     regression.entrainement(x_train, t_train, using_sklearn=skl)
 
     # Predictions sur les ensembles d'entrainement et de test
-    predictions_train = np.array([regression.prediction(x) for x in x_train])
-    predictions_test = np.array([regression.prediction(x) for x in x_test])
+    predictions_train = np.array([regression.prediction(x, skl) for x in x_train])
+    predictions_test = np.array([regression.prediction(x, skl) for x in x_test])
 
     # Calcul des erreurs
     erreurs_entrainement = np.array([regression.erreur(t_n, p_n)

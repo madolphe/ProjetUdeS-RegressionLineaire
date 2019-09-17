@@ -8,6 +8,7 @@ import gestion_donnees as gd
 import numpy as np
 from sklearn import linear_model
 import matplotlib.pyplot as plt
+from sklearn.preprocessing import PolynomialFeatures
 
 
 class Regression:
@@ -16,16 +17,21 @@ class Regression:
         self.w = None
         self.M = m
 
-    def fonction_base_polynomiale(self, x):
+    def fonction_base_polynomiale(self, x, using_sklearn=False):
         """
         Fonction de base qui projette la donnee x vers un espace polynomial tel que mentionne au chapitre 3.
-        Si x est un scalaire, alors phi_x sera un vecteur à self.M dimensions : (x^1,x^2,...,x^self.M)
+        Si x est un scalaire, alors phi_x sera un vecteur à self.M dimensions : (x^0,x^1,x^2,...,x^self.M-1)
         Si x est un vecteur de N scalaires, alors phi_x sera un tableau 2D de taille NxM
 
         NOTE : En mettant phi_x = x, on a une fonction de base lineaire qui fonctionne pour une regression lineaire
         """
-        # AJOUTER CODE ICI
-        phi_x = np.array([x**i for i in range(1, self.M+1)]).T
+        if not using_sklearn:
+            # Après avoir testé les résultats renvoyés par scikit learn, la fonction de base polynomiale renvoie un tableau 2D de float64. C'est pour cel que nous avons décidé de caster nos données
+            phi_x = np.array([x**i for i in range(0, self.M)]).T.astype(float)
+        else:
+            poly = PolynomialFeatures(degree=self.M - 1)
+            poly_x = np.expand_dims(x, axis=1)
+            phi_x = poly.fit_transform(poly_x)
         return phi_x
 
     def recherche_hyperparametre(self, X, t, Mmin=1, Mmax=10):
@@ -94,18 +100,19 @@ class Regression:
         if self.M <= 0:
             self.recherche_hyperparametre(X, t, Mmin=1, Mmax=10)
 
-        phi_x = self.fonction_base_polynomiale(X)
+        phi_x = self.fonction_base_polynomiale(X, using_sklearn=using_sklearn)
+
         if not using_sklearn:
             self.w = np.linalg.solve((phi_x.T.dot(phi_x) + np.identity(phi_x.shape[1]) * self.lamb), (phi_x.T.dot(t)))
-            print("w found", self.w)
+            print("w trouvé : %".format(self.w))
         else:
             reg = linear_model.Ridge(alpha=self.lamb)
             reg.fit(phi_x, t)
             self.w = reg.coef_
-            print("w found", self.w)
+            print("w trouvé : %".format(self.w))
         return phi_x
 
-    def prediction(self, x):
+    def prediction(self, x, using_sklearn):
         """
         Retourne la prediction de la regression lineaire
         pour une entree, representee par un tableau 1D Numpy ``x``.
@@ -114,8 +121,7 @@ class Regression:
         a prealablement ete appelee. Elle doit utiliser le champs ``self.w``
         afin de calculer la prediction y(x,w) (equation 3.1 et 3.3).
         """
-        # AJOUTER CODE ICI
-        phi_x = self.fonction_base_polynomiale(x)
+        phi_x = self.fonction_base_polynomiale(x, using_sklearn=using_sklearn)
         prediction = phi_x.dot(self.w)
         return prediction
 
@@ -126,7 +132,7 @@ class Regression:
         la cible ``t`` et la prediction ``prediction``.
         On ne considère pas la régression avec prédictions multiples ( donc prediction et p sont des vecteurs à une dimension )
         """
-        # AJOUTER CODE ICI
+
         mse = np.sum((prediction-t)**2)
         return mse
 
@@ -180,5 +186,26 @@ if __name__ == '__main__':
         plt.scatter(x_test, t_test)
         plt.scatter(x_test, t_pred_test)
         plt.show()
-    test_entrainement()
+    #test_entrainement()
+
+    def test_fonction_base_polynomiale_scikit():
+        reg = Regression(lamb=5, m=5)
+        x_int = 2
+        x = np.array([1, 2, 3, 4])
+
+        phi_x = reg.fonction_base_polynomiale(x, False)
+        phi_x_true = reg.fonction_base_polynomiale(x, True)
+        print("Fonction sans scikit learn \n", phi_x)
+
+        print(type(reg.fonction_base_polynomiale(x, False)[0,0]))
+        print(reg.fonction_base_polynomiale(x, False).shape)
+
+        print("Fonction avec scikit learn \n ", phi_x_true)
+
+        print(type(reg.fonction_base_polynomiale(x, True)[0,0]))
+        print(reg.fonction_base_polynomiale(x, True).shape)
+
+
+
+    test_fonction_base_polynomiale_scikit()
 
