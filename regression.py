@@ -7,23 +7,22 @@ import gestion_donnees as gd
 import matplotlib.pyplot as plt
 
 
-def warning(erreur_test, erreur_entrainement, bruit, seuil_sous=2, seuil_sur=3):
+def warning(erreur_test, erreur_entrainement, bruit):
     """
     Fonction qui affiche un WARNING à l'ecran lorsque les erreurs obtenues en fonction du bruit
     indique une possibilite de sur- ou de sous-apprentissage
-
     erreur_test: erreur obtenue sur l'ensemble de test
     erreur_apprentissage: erreur obtenue sur l'ensemble d'apprentissage
     bruit: magnitude du bruit
-    seuil_sous: Seuil
-    seuil_sur:
     """
-    if erreur_entrainement / bruit > seuil_sous and erreur_test / bruit > seuil_sous:
-        print("\033[1;31;40m WARNING : Les différentes erreurs relevées par les algorithmes en fonction du bruit "
-              "impliquent qu'il y a eu du sous apprentissage")
-    elif abs(erreur_test - erreur_entrainement) / bruit > seuil_sur:
-        print("\033[1;31;40m WARNING : Les différentes erreurs relevées par les algorithmes en fonction du bruit "
-              "impliquent qu'il y a eu du sur apprentissage")
+    if erreur_test > bruit:
+        if erreur_entrainement < bruit:
+            print("\033[1;31;40m WARNING : Les différentes erreurs relevées par les algorithmes en fonction du bruit " 
+                  "impliquent qu'il y a eu du sur apprentissage")
+        else:
+            print("\033[1;31;40m WARNING : Les différentes erreurs relevées par les algorithmes en fonction du bruit "
+                  "impliquent qu'il y a eu du sous apprentissage")
+
 
 ################################
 # Execution en tant que script 
@@ -63,7 +62,6 @@ def main():
 
     # Entrainement du modele de regression
     regression = sr.Regression(lamb, m)
-    print("x_train avant entrainement", x_train.shape)
     regression.entrainement(x_train, t_train, using_sklearn=skl)
 
     # Predictions sur les ensembles d'entrainement et de test

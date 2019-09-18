@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="898afe82-f494-4919-b805-a0c8cee0c10b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solution_regression.py" beforeDir="false" afterPath="$PROJECT_DIR$/solution_regression.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/regression.py" beforeDir="false" afterPath="$PROJECT_DIR$/regression.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -292,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568839268009</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="intercept bug fixed scikit">
+      <created>1568839580987</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1568839580987</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -341,6 +347,7 @@
     <MESSAGE value="Visualisation terminée" />
     <MESSAGE value="Visualisation commentée et executable depuis un terminal" />
     <MESSAGE value="fixing scalar error" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing scalar error" />
+    <MESSAGE value="intercept bug fixed scikit" />
+    <option name="LAST_COMMIT_MESSAGE" value="intercept bug fixed scikit" />
   </component>
 </project>
