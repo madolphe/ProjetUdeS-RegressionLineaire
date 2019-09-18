@@ -9,7 +9,7 @@ Requis: Python 3.5+ | Linux, Mac OS X, Windows
 ```sh
 pip install pipenv
 ```
-Puis dans le dossier du projet: 
+Puis dans le dossier du projet:  
 
 ```sh
 pipenv install --python 3.5
