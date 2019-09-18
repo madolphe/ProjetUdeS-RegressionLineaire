@@ -5,6 +5,7 @@ import solution_regression as sr
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import gestion_donnees as gd
+# @TODO passage d'arguments pour le lancer depuis l'exterieur
 
 if __name__ == '__main__':
     w = [0.3, 4.1]  # Parametres du modele generatif
