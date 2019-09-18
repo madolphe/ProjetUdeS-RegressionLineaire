@@ -8,7 +8,7 @@ import gestion_donnees as gd
 
 if __name__ == '__main__':
     w = [0.3, 4.1]  # Parametres du modele generatif
-    modele_gen = "sin"
+    modele_gen = "tanh"
     nb_train = 100
     nb_test = 20
     bruit = 0.1
@@ -19,7 +19,7 @@ if __name__ == '__main__':
     gestionnaire_donnees = gd.GestionDonnees(w, modele_gen, nb_train, nb_test, bruit)
     [x_train, t_train, _, _] = gestionnaire_donnees.generer_donnees()
     print("x_train.shape", x_train.shape)
-    # print("x_train: \n", x_train)
+    print("x_train: \n", x_train)
     print("t_train.shape", t_train.shape)
     # print("t_train: \n", t_train)
 
@@ -44,8 +44,23 @@ if __name__ == '__main__':
     # On plot nos résultats:
     fig = plt.figure()
     ax = plt.axes(projection='3d')
-    ax.scatter3D(phi_x[:, 1], phi_x[:, 2], t_train)
-    ax.scatter3D(phi_x[:, 1], phi_x[:, 2], t_pred)
+    # Données dans R^3:
+    ax.scatter3D(phi_x[:, 1], phi_x[:, 2], t_train, c='red')
+    # ax.scatter3D(phi_x[:, 1], phi_x[:, 2], t_pred)
+
+    # Notre modèle:
+    x = np.expand_dims(np.arange(0, 1, 0.1), axis=1)
+    y = x**2
+    X, Y = np.meshgrid(x, y)
+    ones = np.ones((10, 10))
+    Z = regression.w[0]*ones + regression.w[1]*X + regression.w[2]*Y
+    ax.set_title('Projection dans un espace à 3 dimension')
+    ax.set_xlabel('X')
+    ax.set_ylabel('X^2')
+    ax.set_zlabel('Prediction (combinaison linéaire de X et X^2)')
+    ax.plot_surface(X, Y, Z, linewidth=0, cmap='viridis', antialiased=False)
+
+
     fig2 = plt.figure()
     ax2 = plt.axes()
     ax2.scatter(phi_x[:, 1], t_train)
