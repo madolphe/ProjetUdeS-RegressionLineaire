@@ -9,7 +9,6 @@ import matplotlib.pyplot as plt
 
 def warning(erreur_test, erreur_entrainement, bruit, seuil_sous=2, seuil_sur=3):
     """
-    @TODO changer les valeurs des seuils
     Fonction qui affiche un WARNING à l'ecran lorsque les erreurs obtenues en fonction du bruit
     indique une possibilite de sur- ou de sous-apprentissage
 
@@ -92,6 +91,7 @@ def main():
     else:
         plt.suptitle('Resultat AVEC recherche d\'hyperparametres')
     plt.show()
+
 
 if __name__ == "__main__":
     main()
