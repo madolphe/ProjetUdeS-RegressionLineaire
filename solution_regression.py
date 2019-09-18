@@ -107,7 +107,7 @@ class Regression:
             self.w = np.linalg.solve((phi_x.T.dot(phi_x) + np.identity(phi_x.shape[1]) * self.lamb), (phi_x.T.dot(t)))
             print('w trouvé : {}'.format(self.w))
         else:
-            reg = linear_model.Ridge(alpha=self.lamb)
+            reg = linear_model.Ridge(alpha=self.lamb, fit_intercept=False)
             reg.fit(phi_x, t)
             self.w = reg.coef_
             print('w trouvé : {}'.format(self.w))

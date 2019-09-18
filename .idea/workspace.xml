@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="898afe82-f494-4919-b805-a0c8cee0c10b" name="Default Changelist" comment="Visualisation commentée et executable depuis un terminal">
-      <change beforePath="$PROJECT_DIR$/.idea/RegressionLineaire.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RegressionLineaire.iml" afterDir="false" />
+    <list default="true" id="898afe82-f494-4919-b805-a0c8cee0c10b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/regression.py" beforeDir="false" afterPath="$PROJECT_DIR$/regression.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solution_regression.py" beforeDir="false" afterPath="$PROJECT_DIR$/solution_regression.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -287,7 +285,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568829493418</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="fixing scalar error">
+      <created>1568839268009</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1568839268009</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -335,6 +340,7 @@
     <MESSAGE value="tentative de visualisation 3D de la regression linéaire dans un espace de dimension supérieure" />
     <MESSAGE value="Visualisation terminée" />
     <MESSAGE value="Visualisation commentée et executable depuis un terminal" />
-    <option name="LAST_COMMIT_MESSAGE" value="Visualisation commentée et executable depuis un terminal" />
+    <MESSAGE value="fixing scalar error" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing scalar error" />
   </component>
 </project>
