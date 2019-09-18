@@ -7,6 +7,14 @@ from mpl_toolkits.mplot3d import Axes3D
 import gestion_donnees as gd
 
 
+################################
+# Execution en tant que script
+#
+# tapper python3 visualisation3D.py sin 200 0.3 0.001
+#
+# dans un terminal
+################################
+
 def main():
     if len(sys.argv) < 4:
         print("Usage: python visualisation3D.py modele_gen nb_train bruit lambda\n")
