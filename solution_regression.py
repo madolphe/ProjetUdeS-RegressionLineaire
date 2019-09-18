@@ -31,7 +31,7 @@ class Regression:
             phi_x = np.array([x**i for i in range(0, self.M)]).T.astype(float)
         else:
             poly = PolynomialFeatures(degree=self.M - 1)
-            poly_x = np.expand_dims(x, axis=1)
+            poly_x = np.array(x).reshape(-1, 1)
             phi_x = poly.fit_transform(poly_x)
         return phi_x
 
@@ -70,7 +70,7 @@ class Regression:
             liste_erreurs.append(erreur_val_moy)
         index_best_m = liste_erreurs.index(min(liste_erreurs))
         self.M = liste_m[index_best_m]
-        print("Meilleure valeur de l'hyperparamètre M trouvé lors de la 10-fold cross-validation : %".format(self.M))
+        print("Meilleure valeur de l'hyperparamètre M trouvé lors de la 10-fold cross-validation : {}".format(self.M))
 
     def entrainement(self, X, t, using_sklearn=False):
         """
@@ -105,12 +105,12 @@ class Regression:
 
         if not using_sklearn:
             self.w = np.linalg.solve((phi_x.T.dot(phi_x) + np.identity(phi_x.shape[1]) * self.lamb), (phi_x.T.dot(t)))
-            print("w trouvé : %".format(self.w))
+            print('w trouvé : {}'.format(self.w))
         else:
             reg = linear_model.Ridge(alpha=self.lamb)
             reg.fit(phi_x, t)
             self.w = reg.coef_
-            print("w trouvé : %".format(self.w))
+            print('w trouvé : {}'.format(self.w))
         return phi_x
 
     def prediction(self, x, using_sklearn):
@@ -165,15 +165,16 @@ if __name__ == '__main__':
     #test_fonction_recherche_hyperparametres()
 
     def test_entrainement():
-        reg = Regression(lamb=0, m=1500)
+        reg = Regression(lamb=0, m=0)
         w = [0.3, 4.1]
         modele_gen = "tanh"
-        nb_train = 300
+        nb_train = 1000
         nb_test = 100
         bruit = 0.2
         gestionnaire_donnees = gd.GestionDonnees(w, modele_gen, nb_train, nb_test, bruit)
         [x_train, t_train, x_test, t_test] = gestionnaire_donnees.generer_donnees()
-        phi_x = reg.entrainement(x_train, t_train, using_sklearn=False)
+        print("x", x_train.shape)
+        phi_x = reg.entrainement(x_train, t_train, using_sklearn=True)
         t_pred_train = phi_x.dot(reg.w)
         print(t_pred_train.shape)
         phi_x_test = reg.fonction_base_polynomiale(x_test)
@@ -198,15 +199,12 @@ if __name__ == '__main__':
         phi_x_true = reg.fonction_base_polynomiale(x, True)
         print("Fonction sans scikit learn \n", phi_x)
 
-        print(type(reg.fonction_base_polynomiale(x, False)[0,0]))
+        print(type(reg.fonction_base_polynomiale(x, False)[0, 0]))
         print(reg.fonction_base_polynomiale(x, False).shape)
 
         print("Fonction avec scikit learn \n ", phi_x_true)
 
-        print(type(reg.fonction_base_polynomiale(x, True)[0,0]))
+        print(type(reg.fonction_base_polynomiale(x, True)[0, 0]))
         print(reg.fonction_base_polynomiale(x, True).shape)
-
-
-
-    test_fonction_base_polynomiale_scikit()
+    #test_fonction_base_polynomiale_scikit()
 

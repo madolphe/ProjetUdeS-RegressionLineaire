@@ -63,6 +63,7 @@ def main():
 
     # Entrainement du modele de regression
     regression = sr.Regression(lamb, m)
+    print("x_train avant entrainement", x_train.shape)
     regression.entrainement(x_train, t_train, using_sklearn=skl)
 
     # Predictions sur les ensembles d'entrainement et de test
@@ -83,7 +84,7 @@ def main():
 
     # Affichage
     gestionnaire_donnees.afficher_donnees_et_modele(x_train, t_train, True)
-    predictions_range = np.array([regression.prediction(x) for x in np.arange(0, 1, 0.01)])
+    predictions_range = np.array([regression.prediction(x, skl) for x in np.arange(0, 1, 0.01)])
     gestionnaire_donnees.afficher_donnees_et_modele(np.arange(0, 1, 0.01), predictions_range, False)
 
     if m >= 0:
