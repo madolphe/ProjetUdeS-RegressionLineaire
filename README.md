@@ -43,7 +43,17 @@ Un exemple d'utilisation:
 python3 visualisation3D.py sin 200 0.3 0.001
 ```
 
-
-
-# Exemples
+# Exemples script principal
+Le lancement du script principal ouvre séquentiellement 2 fenêtres. Tout d'abord, un graphique présente les résultats de la recherche d'hyperparamètre (si celle-ci a été passé en argument):
+![alt text](https://github.com/EmmaJouffroy/RegressionLineaire/blob/master/extra/recherche-hyperparams.png)
+Ensuite, un graphique montre le modèle trouvé :
 ![alt text](https://github.com/EmmaJouffroy/RegressionLineaire/blob/master/extra/exemple-modele.png)
+
+# Exemples script visualisation 3D
+Le script de visualisation 3D permet de voir la régression linéaire effectuée dans un espace de dimension 3. </br>
+Voici un exemple avec des données générées linéairement (envoie dans un espace de dimension supérieur inutile mais l'idée reste la même): 
+![alt text](https://github.com/EmmaJouffroy/RegressionLineaire/blob/master/extra/gif-ex-lin)visu3D.gif)
+
+
+
+
