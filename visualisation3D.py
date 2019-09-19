@@ -1,11 +1,14 @@
 # -*- coding: utf-8 -*-
+#####
+# JOUFFROY Emma - 19 157 145
+# ADOLPHE Maxime - 19 156 789
+###
 import numpy as np
 import sys
 import solution_regression as sr
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import gestion_donnees as gd
-
 
 ################################
 # Execution en tant que script

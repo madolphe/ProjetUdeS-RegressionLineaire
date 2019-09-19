@@ -3,11 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="898afe82-f494-4919-b805-a0c8cee0c10b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/extra/1.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/extra/2.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/extra/3.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/extra/4.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/visualisation3D.py" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation3D.py" afterDir="false" />
+=======
+>>>>>>> Stashed changes
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -424,7 +427,18 @@
       <option name="project" value="LOCAL" />
       <updated>1568909190175</updated>
     </task>
+<<<<<<< Updated upstream
     <option name="localTasksCounter" value="19" />
+=======
+    <task id="LOCAL-00017" summary="warning function">
+      <created>1568840089931</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1568840089931</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
+>>>>>>> Stashed changes
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -484,6 +498,7 @@
         <entry key="MAIN">
           <value>
             <State>
+<<<<<<< Updated upstream
               <option name="RECENTLY_FILTERED_USER_GROUPS">
                 <collection />
               </option>
@@ -505,6 +520,10 @@
         <entry key="User">
           <value>
             <list />
+=======
+              <option name="COLUMN_ORDER" />
+            </State>
+>>>>>>> Stashed changes
           </value>
         </entry>
       </map>
@@ -520,6 +539,7 @@
     <MESSAGE value="Visualisation terminée" />
     <MESSAGE value="Visualisation commentée et executable depuis un terminal" />
     <MESSAGE value="fixing scalar error" />
+<<<<<<< Updated upstream
     <MESSAGE value="commentaires regression.py" />
     <MESSAGE value="visualisation de la recherche d'hyperparamètres" />
     <MESSAGE value="changement TODO" />
@@ -566,5 +586,10 @@
         </state>
       </provider>
     </entry>
+=======
+    <MESSAGE value="intercept bug fixed scikit" />
+    <MESSAGE value="warning function" />
+    <option name="LAST_COMMIT_MESSAGE" value="warning function" />
+>>>>>>> Stashed changes
   </component>
 </project>

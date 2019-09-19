@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 
 #####
-# JOUFFROY Emma
-# ADOLPHE Maxime - 19 156 789 @TODO ajouter matricule de Emm
+# JOUFFROY Emma - 19 157 145
+# ADOLPHE Maxime - 19 156 789
 ###
+
 import gestion_donnees as gd
 import numpy as np
 from sklearn import linear_model
@@ -34,7 +35,7 @@ class Regression:
             # Note: Le tableau est caster en float même si x est un vecteur d'entier afin de coller avec le
             # fonctionnement de scikit_learn
         else:
-            # Création d'un objet "PolynomialFeatures" de degrès M-1 (afin d'avoir M composantes)
+            # Création d'un objet "PolynomialFeatures" de degrés M-1 (afin d'avoir M composantes)
             poly = PolynomialFeatures(degree=self.M - 1)
             # Reshape afin que x soit toujours un tableau contenant N lignes et 1 colonne:
             poly_x = np.array(x).reshape(-1, 1)
@@ -189,7 +190,7 @@ if __name__ == '__main__':
         # Vérification de la taille de la matrice résultat:
         assert reg.fonction_base_polynomiale(x_int).shape == (reg.M,)
         assert reg.fonction_base_polynomiale(x).shape == (x.shape[0], reg.M)
-    #test_fonction_base_polynomiale()
+    # test_fonction_base_polynomiale()
 
     def test_fonction_recherche_hyperparametres():
         reg = Regression(lamb=5, m=5)
@@ -201,7 +202,7 @@ if __name__ == '__main__':
         gestionnaire_donnees = gd.GestionDonnees(w, modele_gen, nb_train, nb_test, bruit)
         [x_train, t_train, x_test, t_test] = gestionnaire_donnees.generer_donnees()
         M = reg.recherche_hyperparametre(t_train, x_train, 2, 10)
-    #test_fonction_recherche_hyperparametres()
+    # test_fonction_recherche_hyperparametres()
 
     def test_entrainement():
         reg = Regression(lamb=0, m=0)
@@ -227,7 +228,7 @@ if __name__ == '__main__':
         plt.scatter(x_test, t_test)
         plt.scatter(x_test, t_pred_test)
         plt.show()
-    #test_entrainement()
+    # test_entrainement()
 
     def test_fonction_base_polynomiale_scikit():
         reg = Regression(lamb=5, m=5)
@@ -245,5 +246,5 @@ if __name__ == '__main__':
 
         print(type(reg.fonction_base_polynomiale(x, True)[0, 0]))
         print(reg.fonction_base_polynomiale(x, True).shape)
-    #test_fonction_base_polynomiale_scikit()
+    # test_fonction_base_polynomiale_scikit()
 

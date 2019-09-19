@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
 #####
-# VotreNom (VotreMatricule) .~= À MODIFIER =~.
+# JOUFFROY Emma - 19 157 145
+# ADOLPHE Maxime - 19 156 789
 ###
 
 import numpy as np
@@ -76,8 +77,9 @@ class GestionDonnees:
 
 
 if __name__ == '__main__':
+
     def test_donnees_generees():
-        #exemple = sklearn:1 type_model_gen:sin nb_train:20 nb_test:20 bruit:0.3 10 0.001
+        # exemple = sklearn:1 type_model_gen:sin nb_train:20 nb_test:20 bruit:0.3 10 0.001
         w = [0.3, 4.1]  # Parametres du modele generatif
         modele_gen = "lineaire"
         nb_train = 500
@@ -89,4 +91,4 @@ if __name__ == '__main__':
         print(t_train.shape)
         plt.scatter(x_train, t_train)
         plt.show()
-    test_donnees_generees()
+    # test_donnees_generees()

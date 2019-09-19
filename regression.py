@@ -1,10 +1,16 @@
 # -*- coding: utf-8 -*-
 
+#####
+# JOUFFROY Emma - 19 157 145
+# ADOLPHE Maxime - 19 156 789
+###
+
 import numpy as np
 import sys
 import solution_regression as sr
 import gestion_donnees as gd
 import matplotlib.pyplot as plt
+
 
 
 def warning(erreur_test, erreur_entrainement, bruit):
