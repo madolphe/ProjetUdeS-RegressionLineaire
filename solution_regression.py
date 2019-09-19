@@ -2,7 +2,7 @@
 
 #####
 # JOUFFROY Emma
-# ADOLPHE Maxime - 19 156 789 @TODO verif le matricule et ajouter celui de Emm
+# ADOLPHE Maxime - 19 156 789 @TODO ajouter matricule de Emm
 ###
 import gestion_donnees as gd
 import numpy as np
