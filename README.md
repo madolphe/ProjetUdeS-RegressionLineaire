@@ -15,13 +15,13 @@ Puis dans le dossier du projet:
 pipenv install --python 3.5
 ```
 Le pipfile permettra l'installation de toutes les dépendances nécessaires à l'utilisation du projet. 
-Puis pour executer des commandes dans cet environnement virtuel: 
+Puis pour exécuter des commandes dans cet environnement virtuel: 
 
 ```sh
 pipenv shell
 ```
 
-# Getting Started
+# Préparez-vous :
 
 Pour lancer le script principal, le passage des arguments se fait de la manière suivante: 
 ```sh
@@ -34,7 +34,7 @@ python3 regression.py 1 sin 20 20 0.3 10 0.001
 
 </br>
 
-En plus de l'exercice de développement d'un outil de régression, un script permettant une autre visualisation est proposée dans ce projet. En effet, pour effectuer des regressions non linéaires, une fonction de base polynomiale est utilisée pour augmenter la dimensionnalité de la donnée initiale. Dans ce cadre, la regression linéaire est effectué dans un espace de plus grande dimension (elle correspond à faire passer un hyperplan dans ce nouvel espace). Le script visualisation3D permet de "voir" le calcul des paramètres de l'hyperplan dans un espace de dimension 3.
+En plus de l'exercice de développement d'un outil de régression, un script permettant une autre visualisation est proposée dans ce projet. En effet, pour effectuer des regressions non linéaires, une fonction de base polynomiale est utilisée pour augmenter la dimensionnalité de la donnée initiale. Dans ce cadre, la regression linéaire est effectuée dans un espace de plus grande dimension (elle correspond à faire passer un hyperplan dans ce nouvel espace). Le script visualisation3D permet de "voir" le calcul des paramètres de l'hyperplan dans un espace de dimension 3.
 
 </br>
 
