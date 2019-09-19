@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="898afe82-f494-4919-b805-a0c8cee0c10b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/regression.py" beforeDir="false" afterPath="$PROJECT_DIR$/regression.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solution_regression.py" beforeDir="false" afterPath="$PROJECT_DIR$/solution_regression.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +35,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/solution_regression.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1018">
+            <state relative-caret-position="2304">
               <caret line="181" column="41" selection-start-line="181" selection-start-column="41" selection-end-line="181" selection-end-column="41" />
               <folding>
                 <element signature="e#130#158#0" expanded="true" />
@@ -73,8 +71,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/regression.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="20" column="50" lean-forward="true" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+            <state relative-caret-position="240">
+              <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
               <folding>
                 <element signature="e#25#43#0" expanded="true" />
               </folding>
@@ -260,9 +258,9 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.gestion_donnees" />
       <item itemvalue="Python.regression" />
       <item itemvalue="Python.solution_regression" />
-      <item itemvalue="Python.gestion_donnees" />
       <item itemvalue="Python.visualisation" />
     </list>
     <recent_temporary>
@@ -397,7 +395,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31204000" />
+    <option name="totallyTimeSpent" value="31314000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -411,7 +409,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="989" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17582418" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17582418" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -425,7 +423,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4993895" weight="0.32998884" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.31013432" side_tool="true" visible="true" weight="0.23299888" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.6898657" visible="true" weight="0.23299888" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.6898657" visible="true" weight="0.23299888" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.6630037" weight="0.32959184" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -504,7 +502,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/solution_regression.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1018">
+        <state relative-caret-position="2304">
           <caret line="181" column="41" selection-start-line="181" selection-start-column="41" selection-end-line="181" selection-end-column="41" />
           <folding>
             <element signature="e#130#158#0" expanded="true" />
@@ -514,8 +512,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/regression.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="20" column="50" lean-forward="true" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+        <state relative-caret-position="240">
+          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
           <folding>
             <element signature="e#25#43#0" expanded="true" />
           </folding>

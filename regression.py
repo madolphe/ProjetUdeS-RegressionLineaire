@@ -82,7 +82,7 @@ def main():
 
     # Affichage
     gestionnaire_donnees.afficher_donnees_et_modele(x_train, t_train, True)
-    predictions_range = np.array([regression.prediction(x) for x in np.arange(0, 1, 0.01)])
+    predictions_range = np.array([regression.prediction(x, using_sklearn=skl) for x in np.arange(0, 1, 0.01)])
     gestionnaire_donnees.afficher_donnees_et_modele(np.arange(0, 1, 0.01), predictions_range, False)
 
     if m >= 0:
