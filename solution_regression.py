@@ -97,7 +97,7 @@ class Regression:
         # On effectue une petite visualisation des erreurs de validation en fonction de M:
         plt.figure()
         plt.plot(liste_m, liste_erreurs, marker='*')
-        plt.xlabel("M testé")
+        plt.xlabel("M testé \n\n $\mathit{(Fermer\,cette\,fenêtre\,pour\,continuer)}$")
         plt.ylabel("Erreur de validation moyenne")
         plt.title("Résultats de la 10-cross validation \n M choisi: {}".format(self.M))
         plt.show()

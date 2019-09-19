@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="898afe82-f494-4919-b805-a0c8cee0c10b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solution_regression.py" beforeDir="false" afterPath="$PROJECT_DIR$/solution_regression.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,11 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/solution_regression.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2304">
-              <caret line="181" column="41" selection-start-line="181" selection-start-column="41" selection-end-line="181" selection-end-column="41" />
+            <state relative-caret-position="400">
+              <caret line="99" column="83" lean-forward="true" selection-start-line="99" selection-start-column="83" selection-end-line="99" selection-end-column="83" />
               <folding>
                 <element signature="e#130#158#0" expanded="true" />
               </folding>
@@ -59,8 +60,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gestion_donnees.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="590">
-              <caret line="89" column="37" selection-start-line="89" selection-start-column="37" selection-end-line="89" selection-end-column="37" />
+            <state relative-caret-position="487">
+              <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
               <folding>
                 <element signature="e#83#101#0" expanded="true" />
               </folding>
@@ -68,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/regression.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+            <state relative-caret-position="67">
+              <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
               <folding>
                 <element signature="e#25#43#0" expanded="true" />
               </folding>
@@ -116,8 +117,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/solution_regression.py" />
         <option value="$PROJECT_DIR$/regression.py" />
+        <option value="$PROJECT_DIR$/gestion_donnees.py" />
+        <option value="$PROJECT_DIR$/solution_regression.py" />
       </list>
     </option>
   </component>
@@ -258,9 +260,9 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.gestion_donnees" />
       <item itemvalue="Python.regression" />
       <item itemvalue="Python.solution_regression" />
+      <item itemvalue="Python.gestion_donnees" />
       <item itemvalue="Python.visualisation" />
     </list>
     <recent_temporary>
@@ -391,11 +393,18 @@
       <option name="project" value="LOCAL" />
       <updated>1568839268009</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="commentaires regression.py">
+      <created>1568908252500</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1568908252500</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31314000" />
+    <option name="totallyTimeSpent" value="32071000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -422,8 +431,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4993895" weight="0.32998884" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.31013432" side_tool="true" visible="true" weight="0.23299888" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.6898657" visible="true" weight="0.23299888" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.31013432" side_tool="true" visible="true" weight="0.26867336" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.6898657" visible="true" weight="0.26867336" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.6630037" weight="0.32959184" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -487,7 +496,8 @@
     <MESSAGE value="Visualisation terminée" />
     <MESSAGE value="Visualisation commentée et executable depuis un terminal" />
     <MESSAGE value="fixing scalar error" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing scalar error" />
+    <MESSAGE value="commentaires regression.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="commentaires regression.py" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/visualisation3D.py">
@@ -500,22 +510,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/solution_regression.py">
+    <entry file="file://$PROJECT_DIR$/regression.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2304">
-          <caret line="181" column="41" selection-start-line="181" selection-start-column="41" selection-end-line="181" selection-end-column="41" />
+        <state relative-caret-position="67">
+          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
           <folding>
-            <element signature="e#130#158#0" expanded="true" />
+            <element signature="e#25#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/regression.py">
+    <entry file="file://$PROJECT_DIR$/gestion_donnees.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+        <state relative-caret-position="487">
+          <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
           <folding>
-            <element signature="e#25#43#0" expanded="true" />
+            <element signature="e#83#101#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/solution_regression.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="99" column="83" lean-forward="true" selection-start-line="99" selection-start-column="83" selection-end-line="99" selection-end-column="83" />
+          <folding>
+            <element signature="e#130#158#0" expanded="true" />
           </folding>
         </state>
       </provider>
