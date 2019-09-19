@@ -64,10 +64,10 @@ def main():
     X, Y = np.meshgrid(x, y)
     ones = np.ones((10, 10))
     Z = regression.w[0] * ones + regression.w[1] * X + regression.w[2] * Y
-    ax.set_title('Projection dans un espace à 3 dimension')
+    ax.set_title('Projection dans un espace à 3 dimensions')
     ax.set_xlabel('X')
     ax.set_ylabel('X^2')
-    ax.set_zlabel('Prediction (combinaison linéaire de X et X^2)')
+    ax.set_zlabel('Prédiction (combinaison linéaire de X et X^2)')
     # On trace notre plan:
     ax.plot_surface(X, Y, Z, linewidth=0, cmap='viridis', antialiased=False)
 
