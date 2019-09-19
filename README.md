@@ -33,8 +33,6 @@ python3 regression.py 1 sin 20 20 0.3 10 0.001
 ```
 
 </br>
-</br>
-</br>
 
 En plus de l'exercice de développement d'un outil de régression, un script permettant une autre visualisation est proposée dans ce projet. En effet, pour effectuer des regressions non linéaires, une fonction de base polynomiale est utilisée pour augmenter la dimensionnalité de la donnée initiale. Dans ce cadre, la regression linéaire est effectué dans un espace de plus grande dimension (elle correspond à faire passer un hyperplan dans ce nouvel espace). Le script visualisation3D permet de "voir" le calcul des paramètres de l'hyperplan dans un espace de dimension 3.
 
@@ -48,4 +46,4 @@ python3 visualisation3D.py sin 200 0.3 0.001
 
 
 # Exemples
-
+![alt text](https://github.com/EmmaJouffroy/RegressionLineaire/blob/master/extra/exemple-modele.png)
