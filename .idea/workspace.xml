@@ -270,9 +270,9 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.gestion_donnees" />
       <item itemvalue="Python.regression" />
       <item itemvalue="Python.solution_regression" />
+      <item itemvalue="Python.gestion_donnees" />
       <item itemvalue="Python.visualisation" />
     </list>
     <recent_temporary>
