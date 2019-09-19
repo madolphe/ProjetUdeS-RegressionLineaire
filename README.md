@@ -52,7 +52,7 @@ Ensuite, un graphique montre le modèle trouvé :
 # Exemples script visualisation 3D
 Le script de visualisation 3D permet de voir la régression linéaire effectuée dans un espace de dimension 3. </br>
 Voici un exemple avec des données générées linéairement (envoie dans un espace de dimension supérieur inutile mais l'idée reste la même): 
-![alt text](https://github.com/EmmaJouffroy/RegressionLineaire/blob/master/extra/gif-ex-lin)visu3D.gif)
+![alt text](https://github.com/EmmaJouffroy/RegressionLineaire/blob/master/extra/gif-ex-lin\)visu3D.gif)
 
 
 
