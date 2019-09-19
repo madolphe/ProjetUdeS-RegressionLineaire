@@ -1,6 +1,6 @@
 # RegressionLineaire
 
-Le projet suivant est un exercice proposé par le cours IFT... "Technique d'apprentissage". L'objectif est d'implémenter un outil de régression linéaire sur des données générées de trois façon différentes possibles (sinusoïde, tangeante hyperbolique ou linéaire).
+Le projet suivant est un exercice proposé par le cours IFT712 "Technique d'apprentissage". L'objectif est d'implémenter un outil de régression linéaire sur des données générées de trois façon différentes possibles (sinusoïde, tangeante hyperbolique ou linéaire).
 
 # Installation
 
